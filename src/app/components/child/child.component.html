@@ -3,5 +3,6 @@
     <div class="form-group">
         <input type="text" class="form-control"  placeholder="Your todo" #text>
       </div>
-    <button class="btn btn-primary" (click)="sendMessage()">Add todo {{name}}</button>
+    <button class="btn btn-primary mr-3" (click)="sendMessage()">Add todo</button>
+    <button class="btn btn-danger" (click)="deleteAll()" *ngIf="todos.length">Delete all</button>
  </form>

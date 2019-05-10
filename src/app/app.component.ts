@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodosService } from 'src/app/_services/todos.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  constructor(private todosService: TodosService) {}
+
+
   todos:[];
 
   receiveTodos($event) {
     this.todos = $event;
-  }
-
-  deleteAll() {
-    delete(this.todos);
-    localStorage.removeItem('todos');
   }
 
   ngOnInit() {

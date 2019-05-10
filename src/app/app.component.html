@@ -7,12 +7,9 @@
     <div>
       <h2>Parent Component</h2>
       <ul class="list-group mb-3">
-        <li class="list-group-item" *ngFor="let todo of todos, i as index" #li >{{todo}} {{i}}</li>
-      </ul>
-      
-      <button class="btn btn-danger" (click)="deleteAll()" *ngIf="todos.length">Delete all</button>
-      
-    </div>   
+        <li class="list-group-item" *ngFor="let todo of todos, i as index" #list>{{todo}} {{i}}</li>
+      </ul>      
+    </div>
 
 </div>
 

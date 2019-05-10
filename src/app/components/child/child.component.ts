@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter, ViewChild, ElementRef } from '
 })
 export class ChildComponent implements OnInit {
 
-  todos: string[] = [];
+  todos: any = [];
   todo: string;
   name: '';
 
@@ -23,6 +23,12 @@ export class ChildComponent implements OnInit {
     localStorage.setItem('todos', JSON.stringify(this.todos));
     this.messageEvent.emit(this.todos);
     this.text.nativeElement.value = '';
+  }
+
+  deleteAll() {
+    this.todos = [];
+    localStorage.clear();
+    this.messageEvent.emit(this.todos);
   }
 
   ngOnInit() {
